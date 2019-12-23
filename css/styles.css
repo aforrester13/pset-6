@@ -1,5 +1,6 @@
 body {
   margin: auto;
+  padding-top: 10px;
   width: 1224px;
 }
 
@@ -15,12 +16,9 @@ h1 {
   font-style: normal;
   font-variant: small-caps;
   text-transform: none;
+  padding-top: 10px;
 }
 
-canvas {
-  border-width: medium;
-  border-color: blue;
-  border-style: ridge;
+.container {
   text-align: center;
-  background: linear-gradient(to top right, #99ffcc -23%, #ffffff 106%);
 }

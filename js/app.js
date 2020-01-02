@@ -1,45 +1,55 @@
-const clear = document.querySelector(".clear");
-const dateElement = document.getElementById("date");
-const list = document.getElementById("list");
-const input = document.getElementById("input");
 
-
-const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle-thin";
-const LINE_THROUGH = "lineThrough";
-
-const option = {weekday : "long", month: "short", day: "numeric"}
-const today = new Date();
-
-dateElement.innerHTML = today.toLocaleDateString("en-US", options)
-
-function addToDo(toDo){
-
-  if(trash){ return; }
-
-  const DONE = done ? CHECK : UNCHECK;
-  const LINE = done ? LINE_THROUGH : "";
-
-  const item = `<li class= "item">
-                  <i class="fa ${DONE}" job="complete" id="${id}"></i>
-                  <p class="text ${LINE}">Drink Coffee</p>
-                  <i class = "fa fa-trash-o de" job= "delete" id="${id}"></i>
-                </li>
-               `;
-  const position = "beforeend";
-
-  list.insertAdjacentHTML(position, item);
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.append(txt);
+  myNodelist[i].append(span);
 }
 
-document.addEventListener("keyup", function(event){
-  if(event.keyCode == 13){
-    const toDo = input.value
 
-    if(toDo){
-      addToDo(toDo)
-    }
-    input.value = "",
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
   }
-});
+}
 
-addToDo("Drink Coffee", 1, true, false);
+
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.append(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").append(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.append(txt);
+  li.append(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}

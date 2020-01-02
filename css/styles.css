@@ -1,0 +1,103 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: #003333
+}
+
+h2 {
+font-family: Tahoma,Geneva,sans-serif;
+font-size: 24px;
+letter-spacing: 2px;
+word-spacing: 2.6px;
+color: #FFD0D0;
+font-weight: 400;
+text-decoration: none;
+font-style: normal;
+font-variant: small-caps;
+text-transform: none;
+}
+
+.header {
+
+}
+
+#myDIV {
+  text-align: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myInput {
+  box-sizing: content-box;
+  /* width: 500px; */
+  width: 55%;
+  /* height: 5px; */
+  padding: 30px;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color: lightslategrey;
+  font-family: Tahoma,Geneva,sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  color: #FFD0D0;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+}
+
+#myInput:value {
+  font-size: 10px;
+}
+
+#addBtn {
+  box-sizing: content-box;
+  /* width: 100px; */
+  width: 5%;
+  /* height: 5px; */
+  padding: 30px;
+  border: 3px solid black;
+  border-radius: 20px;
+  font-family: Tahoma,Geneva,sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  color: #FFD0D0;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+  background-color: lightslategrey;
+  cursor: pointer;
+}
+
+ul li {
+  width: 100%;
+  padding: 20px;
+  font-family: Tahoma,Geneva,sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  color: black;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+  background-color: beige;
+  border: 3px solid black;
+  border-radius: 5px;
+
+}

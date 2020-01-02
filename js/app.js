@@ -13,7 +13,7 @@ const newElement = function() {
   var exclamation = document.createElement("button")
   exclamation.id = exclamation
   exclamation.value = "Priority"
-  exclamation.setAttribute("style", "text-align: left;")
+  exclamation.setAttribute("style", )
   var done = document.createElement("button")
   done.id = done
   done.value = "Complete"

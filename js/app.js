@@ -143,7 +143,6 @@ const prioritize_item = function() {
   }
 }
 
-
 const startup = function() {
   remove_item();
   finish_item();

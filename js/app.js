@@ -107,7 +107,7 @@ const finish_item = function() {
 const prioritize_item = function() {
   var prioritize = false;
   for (let z = 0; z < priorityButton.length; z++) {
-    priorityButton[z].onclick = function () {
+    priorityButton[z].onclick = function() {
       if (elements[z].priority == false) {
         element_prioritize = tableRow[z]
         prioritize = true;

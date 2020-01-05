@@ -1,37 +1,158 @@
+let elements = []
+var add = document.getElementById("add_button");
+var row = document.getElementsByClassName("row");
+let priority_button = document.getElementsByClassName("priority_button");
+let complete_button = document.getElementsByClassName("complete_button");
+let remove_button = document.getElementsByClassName("remove_button");
+let list_item = document.getElementsByClassName("to_do")
+
+let element_prioritize;
+
 window.onload = function() {
-  document.getElementById("addBtn").onclick = newElement
-  document.getElementById("myInput")
-
+  document.getElementById("table").onmouseover = startup;
 }
 
+const create_item = function() {
+  let input = document.getElementById("input_item").value;
+  if (input === "") {
 
-
-const newElement = function() {
-  var input = document.getElementById("myInput").value
-  var li = document.createElement("li")
-  var ul = document.getElementById("myUL")
-  var exclamation = document.createElement("button")
-  exclamation.id = exclamation
-  exclamation.value = "Priority"
-  exclamation.setAttribute("style", )
-  var done = document.createElement("button")
-  done.id = done
-  done.value = "Complete"
-  var close = document.createElement("button")
-  close.id = close
-  close.value = "Delete"
-
-  li.prepend(exclamation)
-  li.append(input);
-  li.append(done);
-  li.append(close);
-  ul.append(li);
-
-  var array = []
-
-  if (input != null) {
-    array.unshift(input)
   }
+  else {
+      let to_do = {
+          task: input,
+          priority: false,
+          complete: false,
+          html_row: null,
+          html_priority_button: null,
+          html_text: null,
+          html_remove_button: null
+      }
 
-  input = "";
+      elements.push(to_do);
+      let index = elements.indexOf(to_do);
+
+      elements[index].htmlRow = document.createElement("tr");
+      elements[index].htmlRow.setAttribute("class", "row");
+      document.getElementById("table").append(elements[index].htmlRow);
+
+      elements[index].htmlPriorityButton = document.createElement("td");
+      elements[index].htmlPriorityButton.setAttribute("class", "priority_button");
+      elements[index].htmlPriorityButton.innerHTML = "!";
+
+      row[index].append(elements[index].htmlPriorityButton);
+
+      elements[index].htmlText = document.createElement("td");
+      elements[index].htmlText.innerHTML = elements[index].task;
+      elements[index].htmlText.setAttribute("class", "to_do");
+
+      row[index].append(elements[index].htmlText);
+
+      elements[index].htmlCompleteButton = document.createElement("td");
+      elements[index].htmlCompleteButton.innerHTML = "&#x2713;";
+      elements[index].htmlCompleteButton.setAttribute("class", "complete_button");
+
+      row[index].append(elements[index].htmlCompleteButton);
+
+      elements[index].htmlRemoveButton = document.createElement("td");
+      elements[index].htmlRemoveButton.setAttribute("class", "remove_button");
+      elements[index].htmlRemoveButton.innerHTML = "X";
+
+      row[index].append(elements[index].htmlRemoveButton);
+    }
+    document.getElementById("input_item").value = "";
+};
+
+const remove_item = function() {
+  var removed = false;
+  for (let i = 0; i < remove_button.length; i++) {
+    remove_button[i].onclick = function() {
+        removed = true;
+        let remove_element = row[i];
+        remove_element.remove();
+        elements.splice(i, 1);
+    };
+    if (removed) {
+        break;
+    }
+  }
 }
+
+const finish_item = function() {
+  var finish = false;
+  for (let x = 0; x < complete_button.length; x++) {
+    complete_button[x].onclick = function() {
+       if (elements[x].complete == false) {
+         finish = true;
+         list_item[x].style.setProperty("text-decoration", "line-through");
+         list_item[x].style.backgroundColor = "#baff66";
+         complete_button[x].style.backgroundColor = "#baff66";
+         list_item[x].style.color = "black";
+         elements[x].complete = true;
+       }
+       else if (elements[x].complete == true) {
+         complete_button[x].style.backgroundColor = "black";
+         complete_button[x].style.color = "#A4FFA4"
+         list_item[x].style.setProperty("text-decoration", "none");
+         list_item[x].style.backgroundColor = "black";
+         list_item[x].style.color = "#A4FFA4";
+         elements[x].complete = false;
+       }
+     };
+     if (finish) {
+       break;
+     }
+  }
+}
+
+const prioritize_item = function() {
+  var prioritize = false;
+  for (let z = 0; z < priority_button.length; z++) {
+    priority_button[z].onclick = function () {
+      if (elements[z].priority == false) {
+        element_prioritize = row[z]
+        prioritize = true;
+        priority_button[z].style.backgroundColor = "#fff98a";
+        priority_button[z].style.color = "black";
+        priority_button[z].style.borderColor = "black";
+        row[0].before(element_prioritize);
+        elements[z].priority = true;
+
+        const objectToMove = elements[z];
+
+        elements.splice(z, 1);
+        elements.unshift(objectToMove);
+        prioritize = true;
+      }
+      else if (elements[z].priority) {
+        element_prioritize = row[z]
+        priority_button[z].style.backgroundColor = "black";
+        priority_button[z].style.color = "#A4FFA4";
+        priority_button[z].style.borderColor = "#A4FFA4";
+        row[elements.length - 1].after(element_prioritize);
+        elements[z].priority = false;
+
+        let element_move = elements[z];
+        elements.splice(z, 1);
+        elements.push(element_move);
+        prioritize = true;
+      }
+    };
+    if (prioritize) {
+      break;
+    }
+  }
+}
+
+const startup = function() {
+  remove_item();
+  finish_item();
+  prioritize_item();
+}
+
+add.onclick = create_item
+
+document.getElementById("input_item").addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    document.getElementById("add_button").click();
+  }
+});

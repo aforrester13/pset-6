@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 
 <html>
-<head>
+	<head>
+		<title>Reminders</title>
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+			<h1 class="title">Reminders</h1>
 
-  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+			<div class="user_input">
+				<input type="text" class="input" id="input_item">
+				<button class="button_add" id="add_button">Add</button>
+			</div>
 
-  <script type="text/javascript" src="js/app.js"></script>
+			<table id="table"></table>
 
-
-
-</head>
-<body>
-
-  <div id="myDIV" class="container">
-    <h2 class="header">My To Do List</h2>
-    <input type="text" id="myInput" placeholder="Title...">
-    <button id="addBtn">Add</button>
-
-    <ul id="myUL">
-
-    </ul>
-  </div>
-
-</body>
+			<script type="text/javascript" src="js/app.js"></script>
+	</body>
 </html>

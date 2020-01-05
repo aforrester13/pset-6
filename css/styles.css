@@ -1,103 +1,155 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
-body {
-  text-align: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  background-color: #003333
-}
-
-h2 {
-font-family: Tahoma,Geneva,sans-serif;
-font-size: 24px;
-letter-spacing: 2px;
-word-spacing: 2.6px;
-color: #FFD0D0;
+.title {
+font-family: "Courier New", Courier, monospace;
+font-size: 35px;
+letter-spacing: 0.6px;
+word-spacing: 6px;
+color: #A4FFA4;
 font-weight: 400;
 text-decoration: none;
-font-style: normal;
+font-style: italic;
 font-variant: small-caps;
-text-transform: none;
+text-transform: capitalize;
+text-align: center;
 }
 
-.header {
-
+.divider {
+  color: #A4FFA4;
 }
 
-#myDIV {
-  text-align: center;
-  width: 80%;
+.user_input {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
-
-#myInput {
-  box-sizing: content-box;
-  /* width: 500px; */
-  width: 55%;
-  /* height: 5px; */
-  padding: 30px;
-  border: 3px solid black;
-  border-radius: 20px;
+.input {
+  margin: auto;
+  width: 50%;
+  padding: 2px;
+  border-width: 3px;
+  border-radius: 25px;
+  font-family: monospace;
+  font-size: 25px;
   background-color: lightslategrey;
-  font-family: Tahoma,Geneva,sans-serif;
-  font-size: 15px;
-  letter-spacing: 2px;
-  word-spacing: 3px;
-  color: #FFD0D0;
-  font-weight: 400;
-  text-decoration: none;
-  font-style: normal;
-  font-variant: small-caps;
-  text-transform: none;
+  border-color: black;
 }
-
-#myInput:value {
-  font-size: 10px;
-}
-
-#addBtn {
-  box-sizing: content-box;
-  /* width: 100px; */
+.button_add {
+  border-radius: 25px;
+  border-style: ridge;
+  border-width: 3px;
   width: 5%;
-  /* height: 5px; */
-  padding: 30px;
-  border: 3px solid black;
-  border-radius: 20px;
-  font-family: Tahoma,Geneva,sans-serif;
-  font-size: 15px;
-  letter-spacing: 2px;
-  word-spacing: 3px;
-  color: #FFD0D0;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  word-spacing: 6px;
+  color: #A4FFA4;
   font-weight: 400;
   text-decoration: none;
-  font-style: normal;
+  font-style: italic;
   font-variant: small-caps;
-  text-transform: none;
+  text-transform: capitalize;
   background-color: lightslategrey;
-  cursor: pointer;
+  border-color: black;
+}
+table {
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    margin-top: 22px;
+    border-spacing: 10px;
+    border-radius: 25px;
+    background-color: white;
+    font-family: sans-serif;
+    background: #f6e6b4;
+    background: -moz-linear-gradient(top, #f6e6b4 0%, #ed9017 100%);
+    background: -webkit-linear-gradient(top, #f6e6b4 0%,#ed9017 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e6b4', endColorstr='#ed9017',GradientType=0 );
 }
 
-ul li {
-  width: 100%;
-  padding: 20px;
-  font-family: Tahoma,Geneva,sans-serif;
-  font-size: 15px;
-  letter-spacing: 2px;
-  word-spacing: 3px;
-  color: black;
+ td {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  word-spacing: 6px;
+  color: #A4FFA4;
   font-weight: 400;
   text-decoration: none;
-  font-style: normal;
+  font-style: italic;
   font-variant: small-caps;
-  text-transform: none;
-  background-color: beige;
-  border: 3px solid black;
+  text-transform: capitalize;
+}
+.to_do {
+  font-family: sans-serif;
+  text-align: center;
+  border: 2px solid;
+  background-color: black;
+  font-size: 25px;
   border-radius: 5px;
+}
+.to_do:hover {
+  background-color: lightgrey;
+  color: black;
+  border-color: black;
+}
+.row {
+    margin-top: 20px;
+    height: 40px;
+}
+.priority_button {
+    width: 40px;
+    text-align: center;
+    background-color: black;
+    border: 2px solid;
+    border-radius: 5px;
+}
+.priority_button:hover {
+    background-color: #fff98a;
+}
+.complete_button {
+    align: left;
+    width: 40px;
+    text-align: center;
+    background-color: black;
+    border-radius: 5px;
+    border: 2px solid;
+}
+.complete_button:hover {
+    background-color: lightgreen;
+    color: black;
+    border-color: black;
+}
+.remove_button {
+    align: left;
+    width: 40px;
+    text-align: center;
+    background-color: black;
+    border: 2px solid;
+    border-radius: 5px;
+}
+.remove_button:hover {
+    background-color: #ff4040;
+    color: black;
+    border-color: black;
+}
+body {
+  background-color: #161616;
 
+}
+hr {
+  width: 90%;
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  word-spacing: 6px;
+  color: #A4FFA4;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  text-align: center;
 }

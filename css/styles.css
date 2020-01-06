@@ -105,6 +105,8 @@ table {
 }
 .priority_button:hover {
     background-color: #fff98a;
+    color: black;
+    border-color: black;
 }
 .complete_button {
     align: left;

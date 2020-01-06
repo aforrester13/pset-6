@@ -87,11 +87,14 @@ const finish_item = function() {
          listItem[x].style.backgroundColor = "#baff66";
          completeButton[x].style.backgroundColor = "#baff66";
          listItem[x].style.color = "black";
+         completeButton[x].style.color = "black";
+         completeButton[x].style.borderColor = "black";
          elements[x].complete = true;
        }
        else if (elements[x].complete == true) {
          completeButton[x].style.backgroundColor = "black";
          completeButton[x].style.color = "#A4FFA4"
+         completeButton[x].style.borderColor = "#A4FFA4"
          listItem[x].style.setProperty("text-decoration", "none");
          listItem[x].style.backgroundColor = "black";
          listItem[x].style.color = "#A4FFA4";

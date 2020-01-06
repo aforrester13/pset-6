@@ -104,7 +104,7 @@ table {
     border-radius: 5px;
 }
 .priority_button:hover {
-    background-color: #fff98a;
+    background-color: yellow;
     color: black;
     border-color: black;
 }
